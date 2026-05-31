@@ -33,7 +33,7 @@ public class SecurityConfig {
 				.csrf(csrf -> csrf.disable())
 				.cors(cors -> cors.disable())
 				.authorizeHttpRequests(request ->
-													request.requestMatchers("/st/sign-up","/st/login").permitAll()
+													request.requestMatchers("/","/st/sign-up","/st/login").permitAll()
 													.anyRequest().authenticated())
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class) 
